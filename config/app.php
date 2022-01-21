@@ -175,6 +175,12 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
 
+        /**
+         * 套件服務器
+         */
+        Spatie\Permission\PermissionServiceProvider::class,
+
+
     ],
 
     /*
