@@ -4,17 +4,14 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Permission\Traits\HasRoles;
 
-class Article extends Model
+class Post extends Model
 {
     use HasFactory;
-    use HasRoles;
 
-    protected $guard_name = 'web';
+    protected $table = 'posts';
 
     protected $fillable = [
-        'text',
-        'userid'
+        'title', 'body'
     ];
 }
