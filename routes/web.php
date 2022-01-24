@@ -38,3 +38,7 @@ Route::get('post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::put('post/{post}', [PostController::class, 'update'])->name('post.update');
 Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
 Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit')->middleware('permission:edit post');
+
+Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+    return view('dashboard');
+})->name('dashboard');
