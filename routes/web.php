@@ -33,8 +33,8 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
  */
 Route::get('post', [PostController::class, 'index'])->name('post.index');
 Route::post('post', [PostController::class, 'store'])->name('post.store');
-Route::get('post/create', [PostController::class, 'create'])->name('post.create');
+Route::get('post/create', [PostController::class, 'create'])->name('post.create')->middleware('role:writer|admin');
 Route::get('post/{post}', [PostController::class, 'show'])->name('post.show');
 Route::put('post/{post}', [PostController::class, 'update'])->name('post.update');
 Route::delete('post/{post}', [PostController::class, 'destroy'])->name('post.destroy');
-Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit');
+Route::get('post/{post}/edit', [PostController::class, 'edit'])->name('post.edit')->middleware('permission:edit post');

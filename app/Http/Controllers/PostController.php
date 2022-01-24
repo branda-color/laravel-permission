@@ -9,6 +9,7 @@ class PostController extends Controller
 {
     public function index()
     {
+        // auth()->user()->givePermissionTo('publish post');
         $posts = Post::get();
         return view('post.index', compact('posts'));
     }
